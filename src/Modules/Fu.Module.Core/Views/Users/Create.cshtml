@@ -1,0 +1,100 @@
+@model Fu.Module.Core.ViewModels.Users.AddUserViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<div class="ui divider"></div>
+<form asp-action="Create">
+    <div class="ui form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="field">
+            <label asp-for="FullName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger" />
+            </div>
+        </div>
+        <div class="field">
+            <label asp-for="UserName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger" />
+            </div>
+        </div>
+        <div class="field">
+            <label asp-for="Email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger" />
+            </div>
+        </div>
+        <div class="field">
+            <label asp-for="PhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger" />
+            </div>
+        </div>
+        <div class="field">
+            <label asp-for="RoleId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="RoleId" asp-items="@Model.Roles" class="form-control">
+                    <option>Please select</option>
+                </select>
+            </div>
+        </div> 
+        <div class="field">
+            <label asp-for="Password" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Password" class="form-control" />
+            </div>
+        </div>
+        <div class="field">
+            <label asp-for="ConfirmPassword" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ConfirmPassword" class="form-control" />
+            </div>
+        </div> 
+        <div class="field">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="ui toggle checkbox">
+                    <input asp-for="TwoFactorEnabled" />
+                    <label asp-for="TwoFactorEnabled"></label>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="ui toggle checkbox">
+                    <input asp-for="EmailConfirmed" />
+                    <label asp-for="EmailConfirmed"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="ui toggle checkbox">
+                    <input asp-for="PhoneNumberConfirmed" />
+                    <label asp-for="PhoneNumberConfirmed"></label>
+                </div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="ui buttons">
+                    <button type="submit" class="ui positive button">Save</button>
+                    <div class="or"></div>
+                    <a asp-action="index" class="ui negative button">Back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

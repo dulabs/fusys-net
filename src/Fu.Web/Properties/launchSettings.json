@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:7506/",
-      "sslPort": 44315
+      "applicationUrl": "http://lo.cal:7034/",
+      "sslPort": 0
     }
   },
   "profiles": {
@@ -17,7 +17,6 @@
     },
     "Fu.Web": {
       "commandName": "Project",
-      "launchBrowser": true,
       "launchUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

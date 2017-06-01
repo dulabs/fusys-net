@@ -1,0 +1,22 @@
+@model IEnumerable<Fu.Module.Core.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="ui basic segment">
+    <h2 class="ui left floated header">
+        <i class="users icon"></i>
+        <div class="content">
+            Users
+            <div class="sub header">Manage your users</div>
+        </div>
+    </h2>
+
+    <div class="ui right floated main menu">
+        <a class="popup item" data-content="Search User"><i class="search icon"></i></a>
+        <a asp-action="Create" class="popup item" data-content="Add User"><i class="add user icon"></i></a>
+    </div>
+</div>
+@Html.Partial("Partials/_Table", Model)

@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #efefef;
 }
 
 /* Wrapping element */
@@ -35,6 +36,10 @@ textarea {
     padding-left: 0.5em;
 }
 
+.text-danger {
+    color: red;
+}
+
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"]
 {
@@ -47,4 +52,32 @@ textarea {
   .carousel-caption {
     display: none
   }
+}
+
+.process-card {
+    width:100%;
+    height:120px; 
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.4);
+    margin-bottom: 20px;
+}
+
+a.process-card-link {
+    text-decoration: none;
+}
+
+.card-content {
+   height:80px;
+   border-bottom: #ececec 1px solid;
+}
+
+.card-footer {
+   line-height: 40px;
+   text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px !important;
+    width: 100% !important;
 }

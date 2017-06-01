@@ -1,0 +1,49 @@
+@model Fu.Module.Core.Models.Role
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit" class="ui form">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Id" />
+        <div class="field">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+        </div>
+        <div class="field">
+            <label asp-for="NormalizedName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NormalizedName" class="form-control" disabled="disabled" />
+                <span asp-validation-for="NormalizedName" class="text-danger" />
+            </div>
+        </div>
+        <div class="field">
+            <label asp-for="ConcurrencyStamp" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ConcurrencyStamp" class="form-control" disabled="disabled" />
+                <span asp-validation-for="ConcurrencyStamp" class="text-danger" />
+            </div>
+        </div>
+        <div class="field">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="ui buttons">
+                    <button type="submit" class="ui positive button">Save</button>
+                    <div class="or"></div>
+                    <a asp-action="index" class="ui negative button">Back to list</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
