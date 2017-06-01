@@ -2,6 +2,7 @@ image : microsoft/dotnet:latest
 stages:
   - build
 before_script:
+  - 'dotnet --version'
   - 'dotnet restore'
 build:
  stage: build
