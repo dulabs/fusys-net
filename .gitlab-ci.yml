@@ -3,6 +3,7 @@ stages:
   - build
 before_script:
   - 'dotnet --version'
+  - 'dotnet migrate'
   - 'dotnet restore'
 build:
  stage: build
