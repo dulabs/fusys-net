@@ -17,7 +17,8 @@ build:
 test:
  stage: test
  script:
-  - 'dotnet test'
+  - 'echo Test FuWeb'
+  - 'dotnet test src/Fu.Web/Fu.Web.csproj'
 
  only:
    - master
